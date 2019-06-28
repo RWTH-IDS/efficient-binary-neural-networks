@@ -1,0 +1,10 @@
+!/data/download.py
+
+*.log
+*.png
+*.csv
+__pycache__/
+results/
+data/
+
+*.swp

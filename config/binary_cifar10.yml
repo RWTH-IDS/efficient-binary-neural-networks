@@ -1,0 +1,61 @@
+# Copyright (c) IDS, RWTH Aachen.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# Last Modified : Jan. 22, 2024, T. Stadtmann
+
+#####
+# Based on LARQ CIFAR10 (https://larq.dev/examples/binarynet_advanced_cifar10/)
+# Differences: no add var_decay (?);
+#
+#####
+## Usual hyperparameters
+epochs : 500
+net: VGGNet7
+results: 'results'
+model_path : ''
+inference: False
+optimizer : 'adam'
+lr : 0.001
+momentum : 0.9
+lr_milestones : [100,200,300,400]
+lr_decay : [0.1,0.1,0.1,0.1]
+loss : 'CrossEntropy'
+regularization : L2
+weight_decay : 0
+batch_size : 50
+num_workers: 0
+loss_resolution: 10
+verbose: True
+undeterministic: True
+## Binarization
+binarize : True
+gradient_estimator : 'bnn'
+swish_beta : 10
+layer_order : 'CPBA'
+## CNN architecture
+no_biases : True
+no_batchnorm : False
+activation : 'relu'
+width_infl : 1
+## System and output
+no_cuda : False
+gpu_ids : ['0']
+seed : 1
+undeterministic : False
+## Dataset
+dataset : 'cifar10'
+datapath: 'data'
+binarize_input : False
+binarize_input_threshold : 0.5
+## XNOR-Net experiments
+apply_xnor_net : False
+first_weights_fullprecision : False
+last_weights_fullprecision : False
+## Capacity experiments
+tern_weights : '000000000'
+tern_acts : '00000000'
+l1_fp : False
+ln_fp : False
+width_scale : 1

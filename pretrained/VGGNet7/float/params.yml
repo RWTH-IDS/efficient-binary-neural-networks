@@ -1,0 +1,44 @@
+activation: relu
+apply_xnor_net: false
+batch_size: 100
+binarize: false
+binarize_input: false
+binarize_input_threshold: 0.5
+datapath: data
+dataset: cifar10
+epochs: 500
+first_weights_fullprecision: false
+gpu_ids:
+- '0'
+gradient_estimator: vanilla
+inference: false
+l1_fp: false
+last_weights_fullprecision: false
+layer_order: CBAP
+ln_fp: false
+loss: SquareHingeLoss
+lr: 0.1
+lr_decay:
+- 0.1
+- 0.1
+lr_milestones:
+- 80
+- 120
+model_path: ''
+momentum: 0.9
+net: VGGNet7
+no_batchnorm: false
+no_biases: false
+no_cuda: false
+num_workers: 0
+optimizer: sgd
+regularization: L2
+results: results
+seed: 5
+swish_beta: 10
+tern_acts: '00000000'
+tern_weights: '000000000'
+undeterministic: false
+weight_decay: 0.0001
+width_infl: 1
+width_scale: 1

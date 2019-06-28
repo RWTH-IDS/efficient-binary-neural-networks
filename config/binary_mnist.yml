@@ -1,0 +1,56 @@
+# Copyright (c) IDS, RWTH Aachen.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+#
+# Last Modified : Jan. 22, 2024, T. Stadtmann
+
+#####
+# This config file contains all necessary parameter to run a experiment
+#####
+## Usual hyperparameters
+epochs : 500
+net: LeNet5
+results: 'results'
+model_path : ''
+inference: False
+optimizer : 'sgd'
+lr : 0.01
+momentum : 0.99
+lr_milestones : [0]
+lr_decay : [0]
+loss : 'SquareHingeLoss'
+regularization : L2
+weight_decay : 0
+batch_size : 50
+num_workers: 0
+## Binarization
+binarize : True
+gradient_estimator : 'bnn'
+swish_beta : 10
+layer_order : 'CPBA'
+## CNN architecture
+no_biases : True
+no_batchnorm : False
+activation : 'relu'
+width_infl : 1
+## System and output
+no_cuda : False
+gpu_ids : ['0']
+seed : 1
+undeterministic : False
+## Dataset
+dataset : 'mnist'
+datapath: 'data'
+binarize_input : False
+binarize_input_threshold : 0.5
+## XNOR-Net experiments
+apply_xnor_net : False
+first_weights_fullprecision : False
+last_weights_fullprecision : False
+## Capacity experiments
+tern_weights : '0000'
+tern_acts : '000'
+l1_fp : False
+ln_fp : False
+width_scale : 1

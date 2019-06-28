@@ -1,0 +1,42 @@
+activation: relu
+apply_xnor_net: false
+batch_size: 50
+binarize: true
+binarize_input: false
+binarize_input_threshold: 0.5
+datapath: data
+dataset: mnist
+epochs: 500
+first_weights_fullprecision: false
+gpu_ids:
+- '0'
+gradient_estimator: bnn
+inference: false
+l1_fp: false
+last_weights_fullprecision: false
+layer_order: CPBA
+ln_fp: false
+loss: SquareHingeLoss
+lr: 0.01
+lr_decay:
+- 0
+lr_milestones:
+- 0
+model_path: ''
+momentum: 0.99
+net: LeNet5
+no_batchnorm: false
+no_biases: true
+no_cuda: false
+num_workers: 0
+optimizer: sgd
+regularization: L2
+results: results
+seed: 2
+swish_beta: 10
+tern_acts: '000'
+tern_weights: '0000'
+undeterministic: false
+weight_decay: 0
+width_infl: 1
+width_scale: 1
